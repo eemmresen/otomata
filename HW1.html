@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>HW1</title>
+  <style>
+  /* pre { border: solid 1px } */
+    #pat { width: 90px; }
+    #inp { width: 250px; }
+    .foundArr { color: red; }
+	.foundStr { color: blue; }
+	span span[class=foundStr] {color: red
+      }
+  </style>
+</head>
+
+<body>
+<h2 id=title></h2>
+
+<p>
+	
+	<textarea rows = "5" cols = "40" id = "inputText" onKeyUp="checkRE()">
+	</textarea>
+	</br>
+</p>
+<p id=out></p>
+
+<hr />
+<b>Kod bölümü:</b>
+<pre id=sample></pre>
+<hr />
+<p>Ref: <a href="https://emrahtema.github.io/Automata/regexp/EmrahTema_Regexp.html" target="ExternalDocument">Term project by Emrah Tema</a>
+</p>
+
+<script>
+
+
+function checkRE() {
+
+	let tırnak = "\".*\"";
+	let arrayparantez = "\\[.*\\]";
+		let patternStr = new RegExp(tırnak, 'g');
+		let patternArr = new RegExp(arrayparantez, 'g');
+		let str = "<span class = foundStr>$&</span>";
+		let arr = "<span class = foundArr>$&</span>";
+		let text = "";
+		text = inputText.value.replace(patternArr, arr);
+		text = text.replace(patternStr, str);
+		
+		out.innerHTML = text;
+	
+}
+    sample.innerText = checkRE.toString();
+    title.innerText = document.title; checkRE();
+</script>
+
+</body>
+</html>
+
