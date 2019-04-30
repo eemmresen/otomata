@@ -1,0 +1,343 @@
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta charset="utf-8">
+    <title>Home</title>
+
+
+</head>
+
+<style>
+    @media only screen and (min-width: 320px){body{text-align: center}}
+    @media only screen and (min-width: 1024px){body{text-align: inherit}}
+    @media only screen and (min-width: 550px) {
+        input {
+
+        }
+
+        #sides {
+            margin: 0;
+            font-size: 15px;
+        }
+
+        #left {
+            float: left;
+            width: 20%;
+            overflow: hidden;
+        }
+
+        #right {
+            height: 200px;
+            float: left;
+            width: 30%;
+            overflow: hidden;
+        }
+
+        #right1 {
+            height: 300px;
+            float: left;
+            width: 30%;
+            overflow: hidden;
+
+        }
+
+        #last {
+
+            margin-left: 200px;
+        }
+        body {
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 14pt;
+}
+
+#graph-input {
+  float: left;
+  width: 25vw;
+  height: 92.5vh;
+  background: black;
+  color: white;
+  text-align: center;
+  overflow: auto;
+}
+
+#graph {
+  float: right;
+  width: 70vw;
+  height: 92.5vh;
+}
+
+#word-view {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 7.5vh;
+  background: black;
+  color: white;
+  text-align: center;
+  font-size: 5vh;
+}
+
+.icon, .table-icon {
+  border-radius: 50%;
+  background: white;
+  color: black;
+  border: none;
+  width: 20pt;
+  height: 20pt;
+  font-weight: bold;
+  font-size: 16pt;
+  outline: none;
+  vertical-align: middle;
+  transition: background .1s, color .1s;
+  cursor: pointer;
+}
+
+.table-icon {
+  background: black;
+  color: white;
+}
+
+.icon:active {
+  background: black;
+  color: white;
+}
+
+.table-icon:active {
+  background: white;
+  color: black;
+}
+
+ul {
+  text-align: left;
+  line-height: 1.5;
+}
+
+#run {
+  position: fixed;
+  bottom: 1vw;
+  left: 5vw;
+  width: 15vw;
+  background: white;
+  color: black;
+  border: none;
+  font-size: 30pt;
+  border-radius: 4pt;
+  cursor: pointer;
+}
+
+#transitions {
+  background: white;
+  color: black;
+  width: 100%;
+  border: 1px black solid;
+  border-collapse: collapse;
+}
+
+#transitions td, #transitions th {
+  border: 1px black solid;
+}
+
+.table-input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  font-size: 14pt;
+}
+
+#run-bar {
+  position: relative;
+  float: right;
+  background: black;
+  height: 100vh;
+  width: 5vw;
+}
+
+#run-bar .icon {
+  width: 4vw;
+  height: 4vw;
+  margin-top: 1vh;
+  margin-left: 0.5vw;
+  font-size: 1.5vw;
+}
+
+#stack {
+  position: absolute;
+  bottom: 7.5vh;
+  color: white;
+  border: 4px white solid;
+  border-top: none;
+  width: 3vw;
+  left: 1vw;
+  height: 70vh;
+  box-sizing: border-box;
+  display: none;
+}
+
+#stack h3 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  margin: 0;
+  font-size: 2vw;
+}
+
+    }
+</style>
+<body>
+<div id="sides">
+
+    <div id="left">
+
+
+        <br>
+
+        <br>
+        <br>
+        <br>
+        <p>PUSH DOWN AUTOMATA</p>
+
+        
+
+
+
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <p> A pushdown automaton is a way to implement a context-free grammar in a similar way we design DFA for a regular grammar.
+        A DFA can remember a finite amount of information,
+        but a PDA can remember an infinite amount of information.
+        This part has been taken from <strong>&nbsp;</strong><a href="https://www.tutorialspoint.com/automata_theory/pushdown_automata_introduction.htm">
+            TutorialsPoint .</a>
+        This example shows how PDA's yields notation and parse tree notation are done step-by-step.
+        This language accepts the expression 0*1(0+1)* </p>
+    <form>
+        <br>
+
+      
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width">
+            <title>PushdownAutomata.js</title>
+            <link href="style.css" rel="stylesheet" type="text/css" />
+            
+            <script src="dictionary.js"></script>
+            <script src="automata.js"></script>
+            <script src="sketch.js"></script>
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/2.1.2/viz.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/2.1.2/full.render.js"></script>
+         
+            <div id="graph-input">
+              <h1>States <button class="icon" onclick="addState()">+</button> <button class="icon" onclick="removeState()">-</button></h1>
+              <ul id="states">
+              </ul>
+        
+              <h1>Transitions <button class="icon" onclick="addTransition()">+</button></h1>
+              <table id="transitions">
+                <thead>
+                  <tr><th>-</th><th>Origin</th><th>Input</th><th>Top</th><th>Destination</th><th>Operation</th><th>To Stack</th></tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+            </div>
+            <div id="word-view"><p>Press "Run!" to start</p></div>
+            <div id="run-bar">
+              <button class="icon" onclick="currentStep++; setStep()">▶</button>
+              <button class="icon" onclick="currentStep--; setStep()">◀</button>
+              <div id="stack">
+              </div>
+            </div>
+            <button id="run" onclick="run()">Run!</button>
+         
+
+    </form>
+
+   
+
+</div>
+<div style="clear: both;"></div>
+<section id="last">
+    <div class="lastContent">
+
+        <p style="" >This website made by <a href="https://github.com/mertdonmez" target="_blank"> Yigit Mert DONMEZ</a></p>
+
+    </div>
+</section>
+</body>
+
+
+</html>
+
+<script>
+
+    function myFunction1(){
+
+        document.images["right"].src = "https://github.com/mertdonmez/images/blob/master/son1.png?raw=true";
+        document.images["right1"].src="https://github.com/mertdonmez/images/blob/master/tree1.png?raw=true";
+
+
+    }
+    function myFunction2(){
+
+        document.images["right"].src = "https://github.com/mertdonmez/images/blob/master/son2.png?raw=true";
+        document.images["right1"].src="https://github.com/mertdonmez/images/blob/master/tree2.png?raw=true";
+
+    }
+    function myFunction3(){
+
+        document.images["right"].src="https://github.com/mertdonmez/images/blob/master/son3.png?raw=true";
+        document.images["right1"].src="https://github.com/mertdonmez/images/blob/master/tree3-4.png?raw=true";
+
+    }
+
+    function myFunction4(){
+
+        document.images["right"].src="https://github.com/mertdonmez/images/blob/master/son4.png?raw=true";
+        document.images["right1"].src="https://github.com/mertdonmez/images/blob/master/tree3-4.png?raw=true";
+
+    }
+    function myFunction5(){
+
+        document.images["right"].src="https://github.com/mertdonmez/images/blob/master/son5.png?raw=true";
+        document.images["right1"].src="https://github.com/mertdonmez/images/blob/master/tree5-6-7.png?raw=true";
+
+    }
+    function myFunction6(){
+
+        document.images["right"].src="https://github.com/mertdonmez/images/blob/master/son6.png?raw=true";
+        document.images["right1"].src="https://github.com/mertdonmez/images/blob/master/tree5-6-7.png?raw=true";
+
+    }
+    function myFunction7(){
+
+        document.images["right"].src="https://github.com/mertdonmez/images/blob/master/son7.png?raw=true";
+        document.images["right1"].src="https://github.com/mertdonmez/images/blob/master/tree5-6-7.png?raw=true";
+
+    }
+    function myFunction8(){
+
+        document.images["right"].src="https://github.com/mertdonmez/images/blob/master/son8.png?raw=true";
+        document.images["right1"].src="https://github.com/mertdonmez/images/blob/master/tree8-9.png?raw=true";
+
+    }
+    function myFunction9(){
+
+        document.images["right"].src="https://github.com/mertdonmez/images/blob/master/son9.png?raw=true";
+        document.images["right1"].src="https://github.com/mertdonmez/images/blob/master/tree8-9.png?raw=true";
+
+    }
+    function myFunction10(){
+
+        document.images["right"].src="https://github.com/mertdonmez/images/blob/master/son10.png?raw=true";
+        document.images["right1"].src="https://github.com/mertdonmez/images/blob/master/tree10.png?raw=true";
+
+    }
+
+</script>
