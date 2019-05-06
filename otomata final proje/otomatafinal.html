@@ -1,0 +1,73 @@
+<html>
+<head>
+<title>PUSH DOWN AUTOMATA</title>
+<body bgcolor="green">
+<font color="black"size="5">
+<p align="center">
+<b>PUSH DOWN AUTOMATA</b>
+<P>PDA as a building automation machines.
+As is known, the stack structure has two basic functions. 
+Push and pop operations, as can be seen from the names of the stack 
+to put and stack the data to perform the process. In the PDA, 
+these functions are identical.</P>
+<P>6 information is required to clearly identify the PDA.</P>
+(Q,S,G, d ,q0,F)
+<P>Q:shows the situations in our automation.
+<br>S: it is the set of alphabets that can be used at the entry accepted by our machine.
+<br>G: a set of alphabets that can be used in a stack.
+<br>d: is a set of transitions between the States represented by q.
+<br>q0: initial state
+<br>F: final state.</P>
+
+<P>This language accepts L = {01, 0011, 000111, ................. }</P>
+<P>Firstly we put a special symbol &#180; &#36; &#180; into the empty stack.
+<br>State q2 - if we encounter input 0 and top is Null, we push 0 into stack.
+        <P> - if we encounter input 1 and top is 0, we pop this 0.
+<br>State q3 - if we encounter input 1 and top is 0, we pop this 0. 
+        <p> - if we encounter input 1 and top is 0, we pop the top element.
+If the special symbol  &#180; &#36; &#180; is encountered at top of the stack,it is popped
+out and it finally goes to the accepting state q4.</P>
+</br>
+</br>
+<div align="center"></div>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>PushdownAutomata.js</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+
+<script src="dictionary.js"></script>
+<script src="automata.js"></script>
+<script src="sketch.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/2.1.2/viz.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/viz.js/2.1.2/full.render.js"></script>
+</head>
+<body>
+<div id="graph-input">
+  <p>Maya Farber Brodsky</p>
+  <h1>States <button class="icon" onclick="addState()">+</button> <button class="icon" onclick="removeState()">-</button></h1>
+  <ul id="states">
+  </ul>
+
+  <h1>Transitions <button class="icon" onclick="addTransition()">+</button></h1>
+  <table id="transitions">
+    <thead>
+      <tr><th>-</th><th>Origin</th><th>Input</th><th>Top</th><th>Destination</th><th>Operation</th><th>To Stack</th></tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+</div>
+<div id="word-view"><p>Press "Run!" to start</p></div>
+<div id="run-bar">
+  <button class="icon" onclick="currentStep++; setStep()">▶</button>
+  <button class="icon" onclick="currentStep--; setStep()">◀</button>
+  <div id="stack">
+  </div>
+</div>
+<button id="run" onclick="run()">Run!</button>
+
+</body bgcolor="green">
+</head>
+</html>

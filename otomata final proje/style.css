@@ -1,0 +1,138 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  font-size: 14pt;
+}
+
+#graph-input {
+  float: left;
+  width: 25vw;
+  height: 92.5vh;
+  background: black;
+  color: white;
+  text-align: center;
+  overflow: auto;
+}
+
+#graph {
+  float: right;
+  width: 70vw;
+  height: 92.5vh;
+}
+
+#word-view {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 7.5vh;
+  background: black;
+  color: white;
+  text-align: center;
+  font-size: 5vh;
+}
+
+.icon, .table-icon {
+  border-radius: 50%;
+  background: white;
+  color: black;
+  border: none;
+  width: 20pt;
+  height: 20pt;
+  font-weight: bold;
+  font-size: 16pt;
+  outline: none;
+  vertical-align: middle;
+  transition: background .1s, color .1s;
+  cursor: pointer;
+}
+
+.table-icon {
+  background: black;
+  color: white;
+}
+
+.icon:active {
+  background: black;
+  color: white;
+}
+
+.table-icon:active {
+  background: white;
+  color: black;
+}
+
+ul {
+  text-align: left;
+  line-height: 1.5;
+}
+
+#run {
+  position: fixed;
+  bottom: 1vw;
+  left: 5vw;
+  width: 15vw;
+  background: white;
+  color: black;
+  border: none;
+  font-size: 30pt;
+  border-radius: 4pt;
+  cursor: pointer;
+}
+
+#transitions {
+  background: white;
+  color: black;
+  width: 100%;
+  border: 1px black solid;
+  border-collapse: collapse;
+}
+
+#transitions td, #transitions th {
+  border: 1px black solid;
+}
+
+.table-input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  font-size: 14pt;
+}
+
+#run-bar {
+  position: relative;
+  float: right;
+  background: black;
+  height: 100vh;
+  width: 5vw;
+}
+
+#run-bar .icon {
+  width: 4vw;
+  height: 4vw;
+  margin-top: 1vh;
+  margin-left: 0.5vw;
+  font-size: 1.5vw;
+}
+
+#stack {
+  position: absolute;
+  bottom: 7.5vh;
+  color: white;
+  border: 4px white solid;
+  border-top: none;
+  width: 3vw;
+  left: 1vw;
+  height: 70vh;
+  box-sizing: border-box;
+  display: none;
+}
+
+#stack h3 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  margin: 0;
+  font-size: 2vw;
+}
