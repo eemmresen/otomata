@@ -21,4 +21,4 @@ otomata%20final%20proje
 
 
 
-5.[sınıf işi 7 micro j ye kod yazıp calıştırma...](https://eemmresen.github.io/otomata/otomata%20final%20proje/microJ3.html)
+11)[Final ödevi saygılarımla... ](https://eemmresen.github.io/otomata/otomata%20final%20proje/otomatafinal.html)
