@@ -1,4 +1,5 @@
 otomata
+[Sınıf işi 1  DFA](https://eemmresen.github.io/otomata/cw1.html)
 
 [Sınıf işi 2  NFA](https://eemmresen.github.io/otomata/cw2.html)
 
