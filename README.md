@@ -6,6 +6,8 @@ otomata
 
 [Sınıf işi 2  NFA](https://eemmresen.github.io/otomata/cw2.html)
 
+[Sınıf işi 3  RegExp](https://eemmresen.github.io/otomata/cw3.html)
+
 [sınıf işi 5  Expressions](https://eemmresen.github.io/otomata/CW5/cw5.html)
 
 [sınıf işi 7 micro j ye kod yazıp calıştırma...](https://eemmresen.github.io/otomata/CW7/microJ3.html)
