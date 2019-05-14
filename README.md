@@ -6,7 +6,7 @@ otomata
 
 [Sınıf işi 2  NFA](https://eemmresen.github.io/otomata/cw2.html)
 
-[Sınıf işi 3  RegExp](https://eemmresen.github.io/otomata/cw3.html)
+[Sınıf işi 3  RegExp](https://eemmresen.github.io/otomata/cw)
 
 [sınıf işi 5  Expressions](https://eemmresen.github.io/otomata/CW5/cw5.html)
 
