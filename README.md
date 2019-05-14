@@ -10,7 +10,7 @@ otomata
 
 [Sınıf işi 4  Palindrome](https://eemmresen.github.io/otomata/cw4.html)
 
-[sınıf işi 5  Expressions](https://eemmresen.github.io/otomata/CW5/cw5.html) PDA
+[sınıf işi 5  Expressions](https://eemmresen.github.io/otomata/CW5/cw5.html) 
 
 [sınıf işi 6  PDA](https://eemmresen.github.io/otomata/cw6.html) 
 
