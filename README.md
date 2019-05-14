@@ -8,7 +8,7 @@ otomata
 
 [Sınıf işi 3  RegExp](https://eemmresen.github.io/otomata/cw3.html)
 
-[Sınıf işi 4  Palindrome](https://eemmresen.github.io/otomata/)
+[Sınıf işi 4  Palindrome](https://eemmresen.github.io/otomata/cw4.html)
 
 [sınıf işi 5  Expressions](https://eemmresen.github.io/otomata/CW5/cw5.html)
 
