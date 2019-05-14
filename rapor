@@ -1,0 +1,13 @@
+PDA projesi raporu
+      + ve - düğmelerini kullanarak soldaki durumları ekleyin ve kaldırın (- son durumu kaldıracak). Başlangıç ​​durumu her zaman q0'dır ve silinemez.
+       Her durumun yanındaki onay işareti, o durumun kabul edilip edilmediğini işaretler.
+        
+        Geçişler 
+        Geçişler soldaki tabloda belirlenir. + Düğmesini kullanarak bir geçiş ekleyin ve - düğmesini kullanarak varolan bir geçişi kaldırın. 
+        Her geçiş için, başlangıç ​​konumunu, giriş harfini, yığın üst sembolünü (yığının altı +) ve hedef durumu ve yığın işlemini (basması durumunda, aynı zamanda içeri itmek için seçin) seçin. "Yığına"). Not: İşlem zorlanmazsa, "Yığına" boş bırakın. 
+
+         Otomatı çalıştırma 
+         "Çalıştır!" düğmesine basarak otomatı çalıştırın. alt kısımdaki düğmeye basın ve sözcüğü yazın. 
+         Klavyenizdeki sağ oku veya sağdaki sağ oku kullanarak bir adım ileri gidin. Klavyenizdeki sol oku veya sağdaki sol oku kullanarak bir adım geriye gidin.
+         Her adımda, mevcut durum sarı renkte olacak ve okunan son harf yeşil renkte olacaktır. Yığının şu andaki durumu sağda gösterilecektir. 
+         Sözcük kabul edilirse, kabul eden durum yeşil renkte olacaktır. Aksi takdirde, kelime reddedilirse, ulaşılan son durum kırmızı renkle gösterilir. 
