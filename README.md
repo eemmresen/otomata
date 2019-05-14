@@ -20,5 +20,6 @@ otomata
 
 [Ev işi 2   Expressions](https://eemmresen.github.io/otomata/Expression.html)
 
+[Ev işi 3   Modifying MicroJ1](https://eemmresen.github.io/otomata/Expression.html)
 
 [Final ödevi saygılarımla... PDA similasyonu](https://eemmresen.github.io/otomata/otomata%20final%20proje/otomatafinal.html)
